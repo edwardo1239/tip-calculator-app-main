@@ -1,0 +1,285 @@
+$bg-color: hsl(185, 41%, 84%);
+$left-color: hsl(0, 0%, 100%);
+$bg-input: hsl(189, 41%, 97%);
+$buttons: hsl(183, 100%, 15%);
+$fcolor1: hsl(186, 14%, 43%);
+$action-color: hsl(172, 67%, 45%);
+
+@mixin font-configure($font-color) {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: $font-color;
+}
+
+body,
+html {
+  background-color: $bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+
+  padding: 0;
+
+  .logo {
+    display: block;
+    width: 90px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.tip-calculator {
+  display: block;
+  width: 375px;
+  background-color: $left-color;
+  border-radius: 25px;
+  padding-top: 1rem;
+  padding-left: 2rem;
+
+  //left section
+  .inputs {
+    p {
+      @include font-configure($fcolor1);
+      margin-bottom: 0;
+    }
+
+    .bill-in {
+      width: 90%;
+      height: 2.5rem;
+      border: none;
+      background-color: $bg-input;
+      background-image: url("../images/icon-dollar.svg");
+      background-repeat: no-repeat;
+      background-position: 2rem;
+
+      text-align: right;
+      @include font-configure($buttons);
+    }
+
+    .Tip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(1fr, 4);
+
+      p {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      .percentage {
+        background-color: $buttons;
+        border: none;
+        margin-top: 1rem;
+        height: 3rem;
+        width: 10rem;
+        border-radius: 5px;
+        @include font-configure($left-color);
+
+        cursor: pointer;
+      }
+      .percentage:active {
+        background-color: $action-color;
+      }
+
+      .custom {
+        margin-top: 1rem;
+        width: 10rem;
+        height: 3rem;
+        border: none;
+        background-color: $bg-input;
+
+        @include font-configure($fcolor1);
+      }
+    }
+     
+    h6{
+      display: none;
+      font-family: "Space Mono", monospace;
+      font-weight: 700;
+      font-size: 10px;
+      color: #ff0000;
+      margin: 0;
+      margin-right: 2rem;
+      text-align: right;
+     }
+     
+    .people1 {
+      width: 90%;
+      height: 2.5rem;
+
+///people == 0
+      border: 0;
+      border-color: red;
+     
+
+
+
+      background-color: $bg-input;
+      background-image: url("../images/icon-person.svg");
+      background-repeat: no-repeat;
+      background-position: 2rem;
+
+      margin-top: 0.5rem;
+      text-align: right;
+      @include font-configure($buttons);
+    }
+  }
+
+  //right side
+
+  .results {
+    background-color: $buttons;
+    margin-right: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(1fr, 3);
+
+    .TipR {
+      margin-left: 1rem;
+      margin-top: 1rem;
+
+      h2 {
+        @include font-configure($left-color);
+        font-size: 20px;
+        margin-bottom: 0;
+      }
+      h3 {
+        @include font-configure($fcolor1);
+        font-size: 15px;
+        margin-top: 0;
+      }
+    }
+
+    .Tip-ResultC {
+      margin-top: 2rem;
+      text-align: right;
+      margin-right: 1rem;
+
+      .tip-result {
+        @include font-configure($action-color);
+        font-size: 35px;
+      }
+    }
+
+    .reset {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      margin: 1.5rem;
+      height: 2.5rem;
+      border: none;
+      background-color: $action-color;
+      border-radius: 5px;
+      cursor: pointer;
+
+      @include font-configure($buttons);
+    }
+    .reset:active {
+      background-color: hsl(183, 100%, 15%);
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1fr, 4);
+    grid-template-rows: 0.25fr 1fr;
+    width: auto;
+    min-width: 450px;
+    max-width: 1440px;
+  }
+
+  .logo {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    margin-left: 40%;
+  }
+
+  //left side
+
+  .tip-calculator {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    width: auto;
+    height: 500px;
+    min-width: 400px;
+    max-width: 1100px;
+    display: flex;
+
+    .inputs {
+      margin-right: 1rem;
+      p {
+      }
+
+      .bill-in {
+      }
+
+      .Tip {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(1fr, 3);
+
+        p {
+          grid-column-start: 1;
+          grid-column-end: 4;
+        }
+
+        .percentage {
+          background-color: $buttons;
+          border: none;
+          margin-top: 1rem;
+          height: 3rem;
+          width: 90%;
+          border-radius: 5px;
+          @include font-configure($left-color);
+
+          cursor: pointer;
+          margin-bottom: 1rem;
+        }
+
+        .custom {
+          width: 9rem;
+        }
+      }
+    }
+  }
+
+  //right side
+
+  .results {
+    width: 25rem;
+    grid-template-rows: 0.15fr 2fr 1fr;
+    .TipR {
+    }
+
+    .Tip-ResultC {
+    }
+
+    .reset {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      margin: 1.5rem;
+      height: 2.5rem;
+      border: none;
+      background-color: $action-color;
+      border-radius: 5px;
+
+      @include font-configure($buttons);
+    }
+    .reset:active {
+      background-color: hsl(183, 100%, 15%);
+    }
+  }
+}

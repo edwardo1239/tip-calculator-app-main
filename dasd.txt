@@ -1,0 +1,78 @@
+
+function buttonBackground(d) {
+    d5.style.backgroundColor = "hsl(183, 100%, 15%)";
+    d10.style.backgroundColor = "hsl(183, 100%, 15%)";
+    d15.style.backgroundColor = "hsl(183, 100%, 15%)";
+    d25.style.backgroundColor = "hsl(183, 100%, 15%)";
+    d50.style.backgroundColor = "hsl(183, 100%, 15%)";
+    if(d != "0"){d.style.backgroundColor = " hsl(172, 67%, 45%)";}
+        
+}
+
+function TotalCalculator (Bill=0.0 , Tip=0.0){
+    
+     
+    
+    return parseFloat(Bill*Tip + bill);
+}
+
+function peopleR (){
+    if(npeople.value <= 0){
+        npeople.style.border = "10";
+        npeople.style.borderColor = "red";
+    }
+    else{
+        npeople.style.border = "0";
+        npeople.style.borderColor = "red";
+       
+    }
+}
+
+container.addEventListener("click", (e) => {
+    
+   
+    
+    Total_out.textContent = "$" + TotalCalculator(bill.value, tip);
+
+    
+    peopleR();
+    
+
+    //Botones
+    if(e.target == d5){
+        buttonBackground(d5)
+        tip = 0.05;
+    }
+
+    if(e.target == d10){
+        buttonBackground(d10)
+        tip = 0.10;
+    }
+    if(e.target == d15){
+        buttonBackground(d15)
+        tip = 0.15;
+    }
+    if(e.target == d25){
+        buttonBackground(d25)
+        tip = 0.25;
+    }
+    if(e.target == d50){
+        buttonBackground(d50)
+        tip = 0.50;
+    }
+    if(e.target == custom){
+        buttonBackground("0")
+    }
+    if(e.target == reset){
+        buttonBackground(reset)
+        bill.value=""
+        npeople.value=""
+    }
+    
+    
+    
+    
+
+});
+
+

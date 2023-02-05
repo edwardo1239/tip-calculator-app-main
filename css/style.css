@@ -1,0 +1,246 @@
+body,
+html {
+  background-color: hsl(185deg, 41%, 84%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  padding: 0;
+}
+.container .logo {
+  display: block;
+  width: 90px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.tip-calculator {
+  display: block;
+  width: 375px;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 25px;
+  padding-top: 1rem;
+  padding-left: 2rem;
+}
+.tip-calculator .inputs p {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: hsl(186deg, 14%, 43%);
+  margin-bottom: 0;
+}
+.tip-calculator .inputs .bill-in {
+  width: 90%;
+  height: 2.5rem;
+  border: none;
+  background-color: hsl(189deg, 41%, 97%);
+  background-image: url("../images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 2rem;
+  text-align: right;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: hsl(183deg, 100%, 15%);
+}
+.tip-calculator .inputs .Tip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(1fr, 4);
+}
+.tip-calculator .inputs .Tip p {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.tip-calculator .inputs .Tip .percentage {
+  background-color: hsl(183deg, 100%, 15%);
+  border: none;
+  margin-top: 1rem;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 5px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: hsl(0deg, 0%, 100%);
+  cursor: pointer;
+}
+.tip-calculator .inputs .Tip .percentage:active {
+  background-color: hsl(172deg, 67%, 45%);
+}
+.tip-calculator .inputs .Tip .custom {
+  margin-top: 1rem;
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  background-color: hsl(189deg, 41%, 97%);
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: hsl(186deg, 14%, 43%);
+}
+.tip-calculator .inputs h6 {
+  display: none;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 10px;
+  color: #ff0000;
+  margin: 0;
+  margin-right: 2rem;
+  text-align: right;
+}
+.tip-calculator .inputs .people1 {
+  width: 90%;
+  height: 2.5rem;
+  border: 0;
+  border-color: red;
+  background-color: hsl(189deg, 41%, 97%);
+  background-image: url("../images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: 2rem;
+  margin-top: 0.5rem;
+  text-align: right;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: hsl(183deg, 100%, 15%);
+}
+.tip-calculator .results {
+  background-color: hsl(183deg, 100%, 15%);
+  margin-right: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(1fr, 3);
+}
+.tip-calculator .results .TipR {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+.tip-calculator .results .TipR h2 {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: hsl(0deg, 0%, 100%);
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.tip-calculator .results .TipR h3 {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: hsl(186deg, 14%, 43%);
+  font-size: 15px;
+  margin-top: 0;
+}
+.tip-calculator .results .Tip-ResultC {
+  margin-top: 2rem;
+  text-align: right;
+  margin-right: 1rem;
+}
+.tip-calculator .results .Tip-ResultC .tip-result {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: hsl(172deg, 67%, 45%);
+  font-size: 35px;
+}
+.tip-calculator .results .reset {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin: 1.5rem;
+  height: 2.5rem;
+  border: none;
+  background-color: hsl(172deg, 67%, 45%);
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: hsl(183deg, 100%, 15%);
+}
+.tip-calculator .results .reset:active {
+  background-color: hsl(183deg, 100%, 15%);
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1fr, 4);
+    grid-template-rows: 0.25fr 1fr;
+    width: auto;
+    min-width: 450px;
+    max-width: 1440px;
+  }
+  .logo {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    margin-left: 40%;
+  }
+  .tip-calculator {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    width: auto;
+    height: 500px;
+    min-width: 400px;
+    max-width: 1100px;
+    display: flex;
+  }
+  .tip-calculator .inputs {
+    margin-right: 1rem;
+  }
+  .tip-calculator .inputs .Tip {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(1fr, 3);
+  }
+  .tip-calculator .inputs .Tip p {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .tip-calculator .inputs .Tip .percentage {
+    background-color: hsl(183deg, 100%, 15%);
+    border: none;
+    margin-top: 1rem;
+    height: 3rem;
+    width: 90%;
+    border-radius: 5px;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-size: 24px;
+    color: hsl(0deg, 0%, 100%);
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  .tip-calculator .inputs .Tip .custom {
+    width: 9rem;
+  }
+  .results {
+    width: 25rem;
+    grid-template-rows: 0.15fr 2fr 1fr;
+  }
+  .results .reset {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 1.5rem;
+    height: 2.5rem;
+    border: none;
+    background-color: hsl(172deg, 67%, 45%);
+    border-radius: 5px;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-size: 24px;
+    color: hsl(183deg, 100%, 15%);
+  }
+  .results .reset:active {
+    background-color: hsl(183deg, 100%, 15%);
+  }
+}/*# sourceMappingURL=style.css.map */
